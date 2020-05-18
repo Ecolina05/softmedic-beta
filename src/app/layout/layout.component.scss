@@ -1,0 +1,27 @@
+a {
+    span {
+        width: 1200px;
+        i {
+            width: 25px;
+        }
+        &:hover {
+            background-color: #edf2f7;
+        }
+    }
+}
+
+.btn-toggle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: fixed;
+    left: 273px;
+}
+
+.icon {
+    margin-top: -8px;
+}
+
+.mat-button-wrapper {
+    padding: 0 !important;
+}

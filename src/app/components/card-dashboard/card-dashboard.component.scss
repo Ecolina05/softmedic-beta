@@ -1,0 +1,21 @@
+.card {
+    width: 300px;
+    position: relative;
+    z-index: 1;
+    // &:hover {
+    //     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15) !important;
+    //     transition: 0.5s ease;
+    // }
+    .icon-bg {
+        padding: 10px;
+        // border-radius: 50%;
+        // width: 30px;
+        // height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 25px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<div class="animated fadeIn">
+    <!-- Topbar -->
+    <mat-toolbar class="le-bg-transparent le-justify-content-between px-5">
+        <img src="assets/images/logo-sm-blue.png" width="100" alt="Softmedic logo">
+        <div>
+            <button mat-button [matMenuTriggerFor]="user">
+                <mat-icon class="mr-2">account_circle</mat-icon>
+                <span class="le-text-base le-text-bold le-text-uppercase">Ernesto</span>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #user>
+                <button [routerLink]="'/login'" mat-menu-item class="py-0">
+                    <mat-icon class="le-text-lg mr-1 mt-1">power_settings_new</mat-icon>
+                    <span class="le-text-sm">Cerrar sesión</span>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+    <!-- User in session -->
+    <div class="le-w-100 le-display-flex le-justify-content-center">
+        <img src="assets/images/icons/user.png" alt="Profile photo" width="60" class="le-border-radius-circle">
+        <div class="le-display-flex le-justify-content-center le-flex-direction-column ml-4">
+            <label class="le-text-bold le-text-lg">
+                <i *ngIf="getMessagaByHour() === 'Buenos días'" class="far fa-sun text-orange-400"></i>
+                <i *ngIf="getMessagaByHour() === 'Buenas tardes'" class="fas fa-sun text-orange-400"></i>
+                <i *ngIf="getMessagaByHour() === 'Buenas noches'" class="fas fa-moon text-blue-500"></i>
+                {{getMessagaByHour()}}, Ernesto.
+            </label>
+            <label class="le-text-sm ml-4">Frontend developer</label>
+        </div>
+    </div>
+    <!-- Menu -->
+    <div class="menu my-5 py-5">
+        <app-menu></app-menu>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <img src="assets/images/logo-lesoft.png" width="60" alt="Lesoft logo">
+        <span class="le-text-xsm">
+            <span class="color-gray mx-1">|</span>
+            Todos los derechos reservados.
+        </span>
+    </div>
+</div>

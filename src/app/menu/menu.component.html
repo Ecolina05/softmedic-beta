@@ -1,0 +1,43 @@
+<div class="my-1 animated fadeIn">
+    <button *ngIf="component !== 'home'" [routerLink]="['/home']" mat-button
+        class="le-shadow-sm pb-2 le-border-radius-md mr-5" [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/home.png" alt="Home" width="70" class="p-3">
+        <p class="mb-0">Inicio</p>
+    </button>
+    <button [routerLink]="['/dashboard']" mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5"
+        [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/dashboard.png" alt="Dashboard" width="100">
+        <p class="mb-0">Dashboard</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5" [routerLink]="['/pacientes/buscar']"
+        [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/patient.png" alt="Pacientes" width="100">
+        <p class="mb-0">Pacientes</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5" [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/doctor.png" alt="Médicos" width="100">
+        <p class="mb-0">Médicos</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md">
+        <img src="assets/images/menu/nurse.png" alt="Empleados" width="100">
+        <p class="mb-0">Empleados</p>
+    </button>
+</div>
+<div class="my-3 animated fadeIn">
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5" [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/accouting.png" alt="Facturación" width="100">
+        <p class="mb-0">Facturación</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5" [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/reports.png" alt="Reportes" width="100">
+        <p class="mb-0">Reportes</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md mr-5" [ngClass]="{'mr-5' : component === 'home'}">
+        <img src="assets/images/menu/notes.png" alt="Notas" width="100">
+        <p class="mb-0">Notas</p>
+    </button>
+    <button mat-button class="le-shadow-sm pb-2 le-border-radius-md">
+        <img src="assets/images/menu/settings.png" alt="Ajustes" width="100">
+        <p class="mb-0">Ajustes</p>
+    </button>
+</div>

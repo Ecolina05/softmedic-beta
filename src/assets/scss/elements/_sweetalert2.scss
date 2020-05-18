@@ -1,0 +1,16 @@
+.swal2-header {
+    .swal2-title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+.swal2-content {
+    font-size: $text-sm !important;
+    .swal2-validation-message {
+        color: black;
+        font-weight: 400;
+    }
+}
+.swal2-actions {
+    font-size: $text-sm !important;
+}

@@ -1,0 +1,14 @@
+<div class="le-shadow-sm card bg-white le-border-radius-md py-3 px-4"
+    [matTooltip]="'#' + card?.value + ' ' + card?.name">
+    <div class="le-display-flex le-align-items-center le-justify-content-between">
+        <div class="icon-bg mr-3" [class]="card?.colorIcon">
+            <i [class]="card?.icon"></i>
+        </div>
+        <div class="le-text-right">
+            <label class="le-text-bold le-text-lg mat-color-primary"># {{card?.value}}</label><br>
+            <label>{{card?.name}}</label>
+        </div>
+    </div>
+    <mat-progress-bar mode="determinate" [color]="card?.color" [value]="card?.value" class="mb-2 mt-3">
+    </mat-progress-bar>
+</div>

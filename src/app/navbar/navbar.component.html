@@ -1,0 +1,31 @@
+<!-- Navbar -->
+<mat-toolbar class="navbar le-position-fixed le-index-5 le-border-bottom pl-5 pr-3 pb-1">
+    <div class="le-display-flex le-align-items-center le-justify-content-between le-w-100">
+        <div class="le-display-flex le-align-items-center">
+            <img src="assets/images/logo-sm-blue.png" width="100" alt="Softmedic logo">
+            <span class="mx-2 le-color-gray">|</span>
+            <button mat-button class="le-display-flex le-align-items-center pr-2" matTooltip="Menú principal"
+                (click)="showMenu = !showMenu">
+                <span class="le-text-bold le-text-xsm le-text-uppercase"> {{component | nameComponent}} </span>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+        </div>
+        <div>
+            <button mat-button [matMenuTriggerFor]="user">
+                <mat-icon class="mr-2">account_circle</mat-icon>
+                <span class="le-text-base le-text-bold le-text-uppercase">Ernesto</span>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #user>
+                <button [routerLink]="'/login'" mat-menu-item class="py-0">
+                    <mat-icon class="le-text-lg mr-1 mt-1">power_settings_new</mat-icon>
+                    <span class="le-text-sm">Cerrar sesión</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>
+<!-- Menu -->
+<div *ngIf="showMenu" (click)="showMenu = !showMenu" class="menu le-shadow-sm le-border-radius-md py-2 px-4">
+    <app-menu [component]="'dashboard'"></app-menu>
+</div>

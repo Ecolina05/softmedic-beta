@@ -1,0 +1,26 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .portada {
+        width: 450px;
+        @media only screen and (max-width: 975px) {
+            display: none;
+        }
+    }
+    .form-container {
+        width: 400px;
+        height: auto;
+    }
+    .footer {
+        position: fixed;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        img {
+            width: 70px;
+            margin-bottom: 15px;
+        }
+    }
+}

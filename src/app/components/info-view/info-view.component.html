@@ -1,0 +1,11 @@
+<div
+    class="le-vh-100 le-display-flex le-justify-content-center le-align-items-center le-flex-direction-column animated fadeIn">
+    <img src="assets/images/logo-sm-blue.png" alt="Softmedic Logo" width="120">
+    <img [src]="data.image" alt="Image" [width]="data?.sizeImg" class="my-3">
+    <h1 class="le-text-xl le-text-bold mt-2">{{data?.title | uppercase}}</h1>
+    <p class="le-w-20 le-text-center mb-0">{{data?.information}}</p>
+    <button *ngIf="data?.buttonText" mat-button [routerLink]="[data?.buttonLink]"
+        class="le-shadow-sm le-text-bold my-3">{{data?.buttonText}}</button>
+</div>
+<div class="footer">
+</div>

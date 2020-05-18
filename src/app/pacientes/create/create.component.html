@@ -1,0 +1,397 @@
+<div class="le-display-flex le-h-100 animated fadeIn p-4 mt-3">
+    <div class="bg-white le-shadow-sm le-border-radius-md le-w-100 px-5 py-4 mr-3">
+        <label class="le-text-bold le-text-md">Gestión de Pacientes</label><br>
+        <span class="text-gray-500 le-text-xsm">Control de ingreso de Pacientes</span>
+
+        <!-- Tabs -->
+        <mat-tab-group class="mt-2">
+            <!-- Información Personal -->
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon mr-2">playlist_add_check</mat-icon>
+                    Información Personal
+                </ng-template>
+                <div class="my-3">
+                    <!-- Datos basicos -->
+                    <div class="le-border-all le-border-radius-md p-3">
+                        <label class="le-text-bold">Datos Básicos</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-50 mr-3">
+                                <mat-label>Documento de identidad</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let typeID of identitiesType" [value]="cutWord(typeID)">
+                                        {{typeID}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-50 mr-3">
+                                <mat-label>Número de identidad</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Primer nombre</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Segundo nombre</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Primer apellido</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Cuarto apellido</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Fecha de nacimiento</mat-label>
+                                <input matInput>
+                                <!-- <input matInput [matDatepicker]="picker"> -->
+                                <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker> -->
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Sexo</mat-label>
+                                <mat-select>
+                                    <mat-option value="M">MASCULINO</mat-option>
+                                    <mat-option value="F">FEMENINO</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Raza</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let race of race" [value]="race">
+                                        {{race | uppercase}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Religión</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let religion of religion" [value]="religion">
+                                        {{religion | uppercase}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Tipo de sangre y factor RH</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let gore of goreType" [value]="gore">
+                                        {{gore}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Estado civil</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let status of maritalStatus" [value]="status">
+                                        {{status}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Ocupacion</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- Datos de contacto -->
+                    <div class="le-border-all le-border-radius-md p-3 mt-3">
+                        <label class="le-text-bold">Datos de Contacto</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Departamento de residencia</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let id of identitiesType" [value]="id">
+                                        {{id}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Ciudad de residencia</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let id of identitiesType" [value]="id">
+                                        {{id}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Zona de residencia</mat-label>
+                                <mat-select>
+                                    <mat-option value="R">URBANA</mat-option>
+                                    <mat-option value="U">RURAL</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Dirección de residencia</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Correo electrónico</mat-label>
+                                <input matInput type="email" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Teléfono</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Celular</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- Datos familiares -->
+                    <div class="le-border-all le-border-radius-md p-3 mt-3">
+                        <label class="le-text-bold">Datos Familiares</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-50 mr-3">
+                                <mat-label>Padre</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-50 mr-3">
+                                <mat-label>Madre</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Responsable del paciente</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Parentesco</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Teléfono del Responsable</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- Datos administrativos -->
+                    <div class="le-border-all le-border-radius-md p-3 mt-3">
+                        <label class="le-text-bold">Datos Administrativos</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Sucursal</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Prestador</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Régimen</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Fecha ingreso al programa</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <!-- Antecedentes -->
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon mr-2">history</mat-icon>
+                    Antecedentes
+                </ng-template>
+                <div class="my-3">
+                    <!-- Antecedentes Personales -->
+                    <div class="le-border-all le-border-radius-md p-3 mt-3">
+                        <label class="le-text-bold">Antecedentes Personales</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Nace en</mat-label>
+                                <mat-select>
+                                    <mat-option value="HOSPITAL">HOSPITAL</mat-option>
+                                    <mat-option value="CLÍNICA">CLÍNICA</mat-option>
+                                    <mat-option value="CENTRO DE SALUD">CENTRO DE SALUD</mat-option>
+                                    <mat-option value="CASA">CASA</mat-option>
+                                    <mat-option value="OTRO">OTRO</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Nace por</mat-label>
+                                <mat-select>
+                                    <mat-option value="PARTO">PARTO</mat-option>
+                                    <mat-option value="CESÁREA">CESÁREA</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Escolaridad</mat-label>
+                                <mat-select>
+                                    <mat-option value="GUARDERÍA">GUARDERÍA</mat-option>
+                                    <mat-option value="PRIMARIA">PRIMARIA</mat-option>
+                                    <mat-option value="SECUNDARIA">SECUNDARIA</mat-option>
+                                    <mat-option value="SUSCEPTIBLE A ESCOLARIZACIÓN">SUSCEPTIBLE A ESCOLARIZACIÓN
+                                    </mat-option>
+                                    <mat-option value="NO ESTUDIA">NO ESTUDIA</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex ml-2">
+                            <div class="le-display-flex le-flex-direction-column">
+                                <mat-checkbox>Padres consanguíneos</mat-checkbox>
+                                <mat-checkbox>Ingreso a UCI</mat-checkbox>
+                                <mat-checkbox>Gatea</mat-checkbox>
+                                <mat-checkbox>Camina</mat-checkbox>
+                                <mat-checkbox>Habla</mat-checkbox>
+                            </div>
+                            <div class="le-display-flex le-flex-direction-column mx-4">
+                                <mat-checkbox>Problemas de sueño</mat-checkbox>
+                                <mat-checkbox>Fuma</mat-checkbox>
+                                <mat-checkbox>Bebe</mat-checkbox>
+                                <mat-checkbox>Usa drogas</mat-checkbox>
+                            </div>
+                        </div>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Cirugías</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Vacunas</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Hospitalizaciones</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Patologías</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Alergias</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Alergia a medicamentos</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Traumatísmo</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-25 mr-3">
+                                <mat-label>Enfermedad de transmisión sexual</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-100 mr-3">
+                                <mat-label>Otros datos</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- Antecedentes Familiares -->
+                    <div class="le-border-all le-border-radius-md p-3 mt-3">
+                        <label class="le-text-bold">Antecedentes Familiares</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Vive con</mat-label>
+                                <input matInput type="text" autocomplete="off">
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Número de hermanos</mat-label>
+                                <input matInput type="number">
+                            </mat-form-field>
+                            <div class="le-w-35 le-display-flex le-flex-direction-column">
+                                <mat-checkbox>Epilepsia</mat-checkbox>
+                                <mat-checkbox>Cefalea</mat-checkbox>
+                                <mat-checkbox>TDAH</mat-checkbox>
+                                <mat-checkbox>Cancer</mat-checkbox>
+                                <mat-checkbox>Enfermedad Psiquiátrica</mat-checkbox>
+                            </div>
+                        </div>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Motivo de consulta y enfermedad actual</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>IDX</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-35 mr-3">
+                                <mat-label>Otros datos</mat-label>
+                                <textarea matInput type="number"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <!-- Exploración Física -->
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class=" example-tab-icon">accessibility</mat-icon>
+                    Exploración Física
+                </ng-template>
+                <div class="my-3">
+                    <!-- Datos fisicos -->
+                    <div class="le-border-all le-border-radius-md p-3">
+                        <label class="le-text-bold">Datos Físicos</label>
+                        <div class="le-display-flex mt-2">
+                            <mat-form-field class="le-w-20 mr-3">
+                                <mat-label>Peso</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                                <span matSuffix>KG</span>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-20 mr-3">
+                                <mat-label>Estatura</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                                <span matSuffix>CM</span>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-20 mr-3">
+                                <mat-label>Perímetro cefálico</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                                <span matSuffix>CM</span>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-20 mr-3">
+                                <mat-label>Presión arterial</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                                <span matSuffix>mmHg</span>
+                            </mat-form-field>
+                            <mat-form-field class="le-w-20 mr-3">
+                                <mat-label>IMC</mat-label>
+                                <input matInput type="number" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div class="le-display-flex mr-3">
+                            <mat-form-field class="le-w-100">
+                                <mat-label>Examen físico y neurológico</mat-label>
+                                <textarea matInput></textarea>
+                            </mat-form-field>
+                        </div>
+                        <app-alert [type]="'success'" [title]="'Title'" [description]="'Description'">
+                        </app-alert>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+        <div class="buttons mb-5">
+            <button mat-flat-button color="success" class="le-text-sm le-text-bold mr-3">Registrar</button>
+            <button mat-flat-button color="accent" class="le-text-sm le-text-bold mr-3">Actualizar</button>
+            <button mat-flat-button color="warn" class="le-text-sm le-text-bold mr-3">Hitoria clínica</button>
+            <button mat-flat-button color="blue-grey" class="le-text-sm le-text-bold mr-3">Limpiar formulario</button>
+        </div>
+    </div>
+</div>

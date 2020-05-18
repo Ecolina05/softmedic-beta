@@ -1,0 +1,11 @@
+.le-form-control {
+    padding: 6px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+    outline: none;
+    &:focus {
+        border: 1px solid #2196f3;
+        transition: 0.3s;
+    }
+}

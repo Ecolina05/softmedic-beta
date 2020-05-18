@@ -1,0 +1,42 @@
+<div class="animated fadeIn">
+    <div class="cards mt-5 mb-3 px-5">
+        <!-- Card 1 -->
+        <div *ngFor="let card of cards">
+            <app-card-dashboard [card]="card"></app-card-dashboard>
+        </div>
+    </div>
+    <!-- Grafico de barras -->
+    <div class="le-shadow-sm le-display-flex le-justify-content-center le-flex-direction-column le-align-items-center bg-white mx-5"
+        style="height: 350px;">
+        <p class="mb-0">Evoluciones registradas mensualmente</p>
+        <small>Grafico de dos barras (1ero Evoluciones, 2do Consultas)</small>
+    </div>
+    <!-- Pacientes evolucionados recientemente -->
+    <div class="le-display-flex le-justify-content-between my-3 px-5">
+        <div class="le-w-60 bg-white le-shadow-sm mr-5">
+            <div class="py-3 px-5 le-text-bold bg-gray-100">Pacientes evolucionados recientemente </div>
+            <div class="py-3 px-5">
+                <div class="le-display-flex">
+                    <img src="assets/images/user.jpg" alt="" class="le-border-radius-circle" width="50">
+                    <div class="le-display-flex le-flex-direction-column ml-3">
+                        <span class="le-text-bold">Ernesto Colina</span>
+                        <span>05 feb 1997</span>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- Porcentaje de cumplimiento -->
+        <div class="le-w-40 bg-white le-shadow-sm">
+            <div class="py-3 px-5 le-text-bold bg-gray-100" matTooltip="Esto hace Porcentaje de cumplimiento">
+                Porcentaje de cumplimiento
+            </div>
+            <div class="le-display-flex le-align-items-center py-3 px-5">
+                <img src="assets/images/user.jpg" alt="" class="le-border-radius-circle" width="50">
+                <mat-progress-bar mode="determinate" color="warn" value="50" class="mx-4">
+                </mat-progress-bar>
+                <span>50%</span>
+            </div>
+        </div>
+    </div>
+</div>

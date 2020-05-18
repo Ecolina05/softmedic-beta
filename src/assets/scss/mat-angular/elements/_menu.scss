@@ -1,0 +1,7 @@
+.mat-menu-panel {
+    box-shadow: $le-shadow-md !important;
+    min-height: auto !important;
+    .mat-menu-content {
+        padding-top: 3px;
+    }
+}

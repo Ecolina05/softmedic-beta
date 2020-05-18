@@ -1,0 +1,19 @@
+<div class="animated fadeIn le-vh-100 le-overflow-y-hidden mt-2">
+    <div class="le-display-flex le-justify-content-center 
+        le-align-items-center le-flex-direction-column mt-5">
+        <img src="../assets/images/logo-sm-blue.png" width="100" alt="Softmedic logo" class="mb-3">
+        <img src="../assets/images/search.png" alt="Search image" width="350">
+        <!-- Search -->
+        <mat-form-field appearance="outline" class="le-w-50 mt-3">
+            <mat-label>Búsqueda de pacientes</mat-label>
+            <input matInput placeholder="Ernesto Colina" autocomplete="off" [formControl]="searchPatient"
+                [matAutocomplete]="auto">
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+</div>

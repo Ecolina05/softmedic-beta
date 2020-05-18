@@ -1,0 +1,83 @@
+$text-initial: 14px;
+$text-sm: 0.875rem;
+$text-xsm: 0.77rem;
+$text-md: 1rem;
+$text-lg: 1.15rem;
+$text-xl: 2rem;
+
+.le-text-initial {
+  font-size: $text-initial !important;
+}
+.le-text-xsm {
+  font-size: $text-xsm !important;
+}
+.le-text-sm {
+  font-size: $text-sm !important;
+}
+.le-text-md {
+  font-size: $text-md !important;
+}
+.le-text-lg {
+  font-size: $text-lg !important;
+}
+.le-text-xl {
+  font-size: $text-xl !important;
+}
+
+.le-text-left {
+  text-align: left !important;
+}
+.le-text-center {
+  text-align: center !important;
+}
+.le-text-right {
+  text-align: right !important;
+}
+.le-text-justify {
+  text-align: justify;
+}
+.le-text-wrap {
+  white-space: normal;
+}
+.le-label {
+  font-weight: bold;
+}
+
+.le-text-no-bold {
+  font-weight: normal !important;
+}
+.le-text-bold {
+  font-weight: bold !important;
+}
+.le-text-bold-200 {
+  font-weight: 200 !important;
+}
+.le-text-bold-300 {
+  font-weight: 300 !important;
+}
+.le-text-bold-400 {
+  font-weight: 400 !important;
+}
+.le-text-bold-500 {
+  font-weight: 500 !important;
+}
+.le-text-bold-600 {
+  font-weight: 600 !important;
+}
+.le-text-bold-700 {
+  font-weight: 700 !important;
+}
+
+.le-text-decoration-none {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+.le-text-uppercase {
+  text-transform: uppercase;
+}
+.le-text-lowercase {
+  text-transform: lowercase;
+}

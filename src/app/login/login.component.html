@@ -1,0 +1,45 @@
+<div class="container animated fadeIn">
+    <div class="le-display-flex le-flex-direction-column le-align-items-center mr-5">
+        <img src="assets/images/logo-sm-blue.png" alt="Softmedic Logo" class="mb-3" width="120">
+        <img src="assets/images/login.png" alt="portada" class="portada">
+    </div>
+    <div class="form-container le-border-radius-sm p-5 ml-5">
+        <div class="le-w-100 le-text-center">
+            <p class="le-text-center le-text-bold le-text-lg mt-1 mb-2">Inicio de sesión</p>
+            <p class="le-text-sm le-color-gray le-text-center mb-3" style="width: 400px;">
+                Para mantenerse conectado con nosotros, inicie sesión con su información personal, usuario y
+                contraseña.
+            </p>
+        </div>
+        <div class="my-3">
+            <!-- User -->
+            <mat-form-field appearance="outline" class="le-w-100 mb-n3">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="ecolina">
+                <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+            <!-- Password -->
+            <mat-form-field appearance="outline" class="le-w-100">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="••••••••">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <!-- Actions -->
+            <div class="buttons">
+                <button mat-flat-button color="primary" class="le-w-100 le-text-bold mr-3"
+                    (click)="login()">Acceder</button>
+            </div>
+            <div class="le-text-xsm le-w-100 le-display-flex le-justify-content-between pr-2 mt-3">
+                <mat-checkbox>Recordar datos</mat-checkbox>
+                <a href="#!" (click)="restorePass()" class="le-text-decoration-none le-color-black">
+                    ¿Olvidaste tu contraseña?
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="assets/images/logo-lesoft.png" alt="Lesoft logo">
+    </div>
+</div>

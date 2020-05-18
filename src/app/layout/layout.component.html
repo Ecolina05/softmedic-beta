@@ -1,0 +1,28 @@
+<ng-container>
+    <div *ngIf="showNavbar()">
+        <app-navbar [component]="currentComponent"></app-navbar>
+    </div>
+
+    <mat-sidenav-container>
+        <mat-sidenav [ngClass]="{'le-display-none': !showSidenav(), 'le-display-block': showSidenav()}" #sidenav
+            mode="side" opened class="le-position-fixed pl-5 pt-4">
+            <!-- <button mat-mini-fab color="basic" (click)="sidenav.toggle()" class="btn-toggle">
+                <i class="fas fa-angle-left icon"></i>
+            </button> -->
+            <span class="le-text-xsm text-gray-600 mb-3 pl-2">Opciones acerca {{categoriaMenu}}:</span>
+            <div *ngFor="let ruta of rutas" class="my-2">
+                <a [routerLink]="[ruta.ruta]" class="le-text-decoration-none le-color-black le-text-bold-500">
+                    <span class="le-border-radius-md px-3 py-1">
+                        <i class="mr-2" [class]="ruta.icono"></i> {{ruta.nombreRuta}}
+                    </span>
+                </a>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content style="margin-left: 0;">
+            <div [ngClass]="{'mt-5 pt-1': showNavbar()}" [ngStyle]="{'margin-left': !showSidenav() ? '0px': '290px'}">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>
