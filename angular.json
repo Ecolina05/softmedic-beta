@@ -24,6 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/assets/images/favicon.png",
               "src/assets"
             ],
             "styles": [
@@ -87,6 +88,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets/images/favicon.png",
               "src/assets"
             ],
             "styles": [
@@ -122,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "lesoft-softmedic-frontend"
 }
