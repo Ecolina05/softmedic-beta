@@ -1,8 +1,11 @@
-app.use(express.static('./ dist / <lesoft-softmedic-frontend> '));
+const express = require('express');
+const path = require('path');
 
-app.get('/ *', function (req, res) {
-    res.sendFile('index.html', { root: 'dist / <lesoft-softmedic-frontend> /' }
-    );
+const app = express();
+
+app.use(express.static(__dirname + '/dist/ng-blog'));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/ng-blog/index.html'));
 });
 
-app.listen(proceso.env.PORT || 8080);
+app.listen(process.env.PORT || 8080);
